@@ -9,34 +9,7 @@ var Promise = require('bluebird'),
 
 module.exports ={
 
-		save: function(data)
-		{
-			console.log("in data",data);
-			//console.log("in context",context);
-			var date = new Date();
-			return API.Model(User).create(data)
-			.then(function(crop){
-				var result;
-            if(crop){
-                result = {
-                            "Status": true,
-                            "Code": 200,
-                            "Message": "success",
-                            "data": crop,
-                        }
-                
-            }else{
-                result = {
-                           "Status": false,
-                           "Code": 301,
-                           "Message": "Faild"
-                           }
-            }
-
-            return result;
-			});
-		},
-		list : function(data,context)
+		/*list : function(data,context)
 		{
 			passport.use(new JwtStrategy(opts, function(jwt_payload, done)
 			{
@@ -52,5 +25,5 @@ module.exports ={
 				})
 			}))
 
-		}
+		}*/
 };

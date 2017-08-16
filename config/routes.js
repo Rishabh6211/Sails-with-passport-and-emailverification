@@ -40,7 +40,8 @@ module.exports.routes = {
   'get /auth/validate_token' : 'AuthController.validate_token',
   'get /auth/logout': 'AuthController.logout',
   'post /register' : 'UserController.register',
-  'get /verify' : 'UserController.verify',
+  //'get /verify' :'UsersController.verify',
+  //'get /verify' : 'UserController.verify',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

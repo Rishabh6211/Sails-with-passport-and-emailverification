@@ -18,34 +18,37 @@ module.exports = {
 	  		required:true,
 	  		//unique:true
 	  	},
-	  	/*password:{
+	  	password:{
 	  		type:'string',
 	  		required:true
-	  	},*/
+	  	},
 	  	isDeleted:{
 	  		type:'boolean',
 	  		defaultsTo:false
 	  	},
+	  	isVerified: {
+            type: 'string',
+            enum: ['Y','N'],
+            defaultsTo: 'N'
+        },
+        code:{
+        	type:'string'
+        },
 	  	toJson : function()
 	  	{
 	  		var obj = this.toObject();
 	  		delete obj.password;
 	  		return obj;
-	  		console.log("obj",obj);
 	  	}
 
   },
    beforeCreate: function (user, cb) {
     //delete user.password_confirmation;
     bcrypt.genSalt(10, function (err, salt) {
-    	console.log("salt", salt)
         bcrypt.hash(user.password, salt, function () {
-        	console.log("pass",user.password)
         }, function (err, hash) {
-        	console.log("hash",hash)
             user.password = hash;
             cb(null, user);
-            console.log("user",user)
         });
     });
   }

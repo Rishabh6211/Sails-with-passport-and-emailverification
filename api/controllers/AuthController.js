@@ -13,7 +13,7 @@ module.exports = {
 
 	validate_token : function(req,res)
 	{
-		AuthService.isValidToken(req, res);
+		AuthService.isvalidtoken(req, res);
 	},
 	 logout: function(req, res){
         //req.logout is passportjs function to clear user information. see http://passportjs.org/docs
