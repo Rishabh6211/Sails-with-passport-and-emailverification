@@ -21,10 +21,10 @@ module.exports = {
 
     register: function(req,res){
         var email = req.body.email;
-        var mailOptions = {};
+        //var mailOptions = {};
         var password = req.body.password;
-        console.log("body",req.body);
-         rand=Math.floor((Math.random() * 100) + 54);
+        //console.log("body",req.body);
+         /*rand=Math.floor((Math.random() * 100) + 54);
         link="http://localhost:1337/user/verify?id="+rand;
        
         mailOptions={
@@ -32,7 +32,7 @@ module.exports = {
             to : email,
             subject : "Please confirm your Email account",
             html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
-        }
+        }*/
         if(!email || typeof email == undefined)
         {
             console.log("email is required");
@@ -47,19 +47,19 @@ module.exports = {
        
         else
         { 
-            transport.sendMail(mailOptions, function (err, info) {
-                console.log("errro is ",err, info);
-                if(err)
+            //transport.sendMail(mailOptions, function (err, info) {
+               // console.log("errro is ",err, info);
+                /*if(err)
                 {
                     console.log("server error");
-                }
-                else
-                {
+                }*/
+               // else
+                //{
                     User.find({email:email}, function(err , result){
                     console.log("email",email);
                     if(err)
                     {
-                        res.send("err");
+                        res.send("email already registerd");
 
                     }
                     
@@ -79,8 +79,8 @@ module.exports = {
                         })
                     }
                 })
-                }
-            });
+                //}
+            //});
         }
        
         
