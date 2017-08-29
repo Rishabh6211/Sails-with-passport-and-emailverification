@@ -302,6 +302,17 @@ module.exports = {
 		if (matches) {
 
 			if (matches.length !== 3) {
-				ret
+				return new Error('Invalid input string');
+			}
+
+			response.type = matches[1];
+			response.data = new Buffer(matches[2], 'base64');
+		} else {
+			response.error = constantObj.messages.INVALID_IMAGE;
+		}
+
+		return response;
+	}
 };
+
 
