@@ -42,6 +42,8 @@ module.exports.routes = {
   'post /register' : 'UserController.register',
   //'get /verify' :'UsersController.verify',
   //'get /verify' : 'UserController.verify',
+  'post /offers' : { model: 'offers', blueprint: 'create'},
+  'get /offers' : { model: 'offers', blueprint: 'find'},
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
