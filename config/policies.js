@@ -34,6 +34,12 @@ module.exports.policies = {
   AuthController: {
       '*': true
   },
+  OffersController:{
+      '*': true
+  },
+  CommonController:{
+      '*': true
+  }
 
   /***************************************************************************
   *                                                                          *

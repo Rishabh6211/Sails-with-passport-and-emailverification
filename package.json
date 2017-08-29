@@ -10,6 +10,8 @@
     "bluebird": "^3.5.0",
     "ejs": "2.3.4",
     "express-jwt": "^5.3.0",
+    "fs": "0.0.1-security",
+    "gm": "1.23.0",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-coffee": "1.0.0",
@@ -37,7 +39,8 @@
     "sails-disk": "~0.10.9",
     "sails-mongo": "^0.12.2",
     "sails-promise": "0.0.4",
-    "twilio": "^3.4.0"
+    "twilio": "^3.4.0",
+    "uuid": "3.1.0"
   },
   "scripts": {
     "debug": "node debug app.js",

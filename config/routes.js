@@ -40,10 +40,21 @@ module.exports.routes = {
   'get /auth/validate_token' : 'AuthController.validate_token',
   'get /auth/logout': 'AuthController.logout',
   'post /register' : 'UserController.register',
-  //'get /verify' :'UsersController.verify',
-  //'get /verify' : 'UserController.verify',
-  'post /offers' : { model: 'offers', blueprint: 'create'},
-  'get /offers' : { model: 'offers', blueprint: 'find'},
+  'get /verify' :'UsersController.verify',
+  'get /verify' : 'UserController.verify',
+ 
+
+ //offers
+   'post /offers' : 'OffersController.addOffers',
+   'get /offers'  : 'OffersController.listOffers',
+   'put /offers'  : 'OffersController.updateOffers',
+
+//common
+   'post /addoffers'  : 'CommonController.addOffers',
+   'get /getoffer'    : 'CommonController.listOffers',
+   'put /updateoffer' : 'CommonController.updateOffers',
+   'delete /deleteoffers' : 'CommonController.deleteOffers',
+   'post /upload': 'CommonController.uploadImages',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
