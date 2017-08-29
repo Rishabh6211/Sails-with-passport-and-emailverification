@@ -24,7 +24,7 @@ module.exports = {
   			required:true
   		},
   		image: {
-            type: 'string'
+            type: 'array'
         },
   }
 };

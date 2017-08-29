@@ -40,6 +40,12 @@ module.exports = {
 	  	district:{
 	  		type:'string'
 	  	},
+	  	roles: {
+            type: 'string',
+            enum: ['SA', 'A','U'],
+            defaultsTo: 'U'
+            
+        },
 	  	isDeleted:{
 	  		type:'boolean',
 	  		defaultsTo:false
