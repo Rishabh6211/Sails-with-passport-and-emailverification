@@ -13,7 +13,7 @@ var transport = nodemailer.createTransport(smtpTransport({
     sendmail: true,
     auth: {
         user: "dsvvian.rishabh@gmail.com",
-        pass: "9001938408"
+        pass: "*********"
     }
 }));
 var rand,host,link;
@@ -23,6 +23,8 @@ module.exports = {
         var email = req.body.email;
         //var mailOptions = {};
         var password = req.body.password;
+        var data = req.body;
+        //console.log("data1",data);
         //console.log("body",req.body);
          /*rand=Math.floor((Math.random() * 100) + 54);
         link="http://localhost:1337/user/verify?id="+rand;
@@ -33,14 +35,14 @@ module.exports = {
             subject : "Please confirm your Email account",
             html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
         }*/
-        if(!email || typeof email == undefined)
+        if(!data.email || typeof data.email == undefined)
         {
-            console.log("email is required");
+            //console.log("email is required");
             res.send("email is required")
         }
-        else if(!password || typeof password == undefined)
+        else if(!data.password || typeof data.password == undefined)
         {
-            console.log("password is required");
+            //console.log("password is required");
             res.send("password is required")
         }
          
@@ -55,26 +57,41 @@ module.exports = {
                 }*/
                // else
                 //{
-                    User.find({email:email}, function(err , result){
-                    console.log("email",email);
-                    if(err)
+                    User.findOne({email:data.email}, function(err , result){
+                    //console.log("email",email);
+                    if(result)
                     {
-                        res.send("email already registerd");
+                        return res.jsonx({
+                            code:404,
+                            success: false,
+                            message: "Email is already registerd"                                        
+                        });
 
                     }
                     
                     else
                     {
-                        User.create({username:email,email:email,password:password,code:rand}).exec(function(err,data)
+                        data.code = rand;
+                        User.create(data).exec(function(err,result)
                         {
-                            console.log("data",data);
+                            //console.log("data",data);
                             if(err)
                             {
-                                res.send("err");
+                                return res.jsonx({
+                                    code :404,
+                                    success: false,
+                                    error: err                                       
+                                });
                             }
                             else
                             {
-                                res.ok('success');
+                                return res.jsonx({
+                                        success: true,
+                                        message: "Successfully Registeration",                                        
+                                        data: {
+                                            success: result
+                                        }
+                                    });
                             }
                         })
                     }

@@ -22,6 +22,24 @@ module.exports = {
 	  		type:'string',
 	  		required:true
 	  	},
+	  	state:{
+	  		type:'string'
+	  	},
+	  	address:{
+	  		type:'string'
+	  	},
+	  	city:{
+	  		type:'string'
+	  	},
+	  	phone:{
+	  		type:'integer'
+	  	},
+	  	pincode:{
+	  		type:'integer'
+	  	},
+	  	district:{
+	  		type:'string'
+	  	},
 	  	isDeleted:{
 	  		type:'boolean',
 	  		defaultsTo:false
