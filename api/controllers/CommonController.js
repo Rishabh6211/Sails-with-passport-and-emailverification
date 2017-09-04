@@ -4,27 +4,29 @@
  * @description :: Server-side logic for managing offers
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
+var Promise = require('q');
+var gm = require('gm');
 module.exports = {
 
 	addOffers: function(req,res)
 	{
+		var Model = {};
 		var data = {};
 		data = req.body;
-		var modelName = req.body.model;
+		console.log("data",data);
+		var modelName = data.model;
         var Model = sails.models[modelName];
+        console.log("model",Model)
 		Model.create(data).exec(function(err,result)
 		{	
-			if(err)
-			{
+			if(err){
 				return res.jsonx({
 					code : 400,
 					success:false,
 					error : err
 				});
 			}
-			else
-			{
+			else{
 				return res.jsonx({
 					code : 200,
 					success:true,
@@ -141,7 +143,7 @@ module.exports = {
 		var date = new Date();
 		var currentDate = date.valueOf();
 		
-		var modelName = req.body.type;
+		var modelName = "offers";
 		//var modelName = 'crops';
 		
 		var Model = sails.models[modelName];
@@ -238,7 +240,7 @@ module.exports = {
 								                    success: false,
 								                    error: {
 								                        code : 400,
-								                        message : constantObj.messages.NOT_UPLOADED
+								                        message :"NOT_UPLOADED"
 								                    	
 								                    },
 								                });
@@ -250,7 +252,7 @@ module.exports = {
 						                    success: false,
 						                    error: {
 						                        code : 400,
-						                        message : constantObj.messages.NOT_UPLOADED
+						                        message : "NOT_UPLOADEd"
 						                    	
 						                    },
 						                });
@@ -277,7 +279,7 @@ module.exports = {
                     success: false,
                     error: {
                         code : 400,
-                        message : constantObj.messages.INVALID_IMAGE
+                        message :"INVALID_IMAGE"
                     	
                     },
                 });
@@ -288,7 +290,7 @@ module.exports = {
                 success: false,
                 error: {
                     code : 400,
-                    message : constantObj.messages.SIZE_EXCEEDED
+                    message : "SIZE_EXCEEDED"
                 	
                 },
             });
