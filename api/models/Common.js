@@ -8,7 +8,8 @@
 module.exports = {
 
   attributes: {
-
+      autoCreatedAt: true,
+      autoUpdatedAt: true,
   		name : {
   			type:"string",
   			required:true

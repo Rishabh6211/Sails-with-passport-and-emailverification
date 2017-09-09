@@ -37,6 +37,9 @@ module.exports.policies = {
   OffersController:{
       '*': true
   },
+  StatesController: {
+   '*' : true,
+  },
   CommonController:{
       '*': true
   }

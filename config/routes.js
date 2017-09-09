@@ -55,6 +55,9 @@ module.exports.routes = {
    'put /updateoffer' : 'CommonController.updateOffers',
    'delete /deleteoffers' : 'CommonController.deleteOffers',
    'post /upload': 'CommonController.uploadImages',
+
+// States API Routes
+'get /states' : 'StateController.findStates',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
