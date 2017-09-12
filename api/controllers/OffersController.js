@@ -27,7 +27,7 @@ module.exports = {
 					code : 200,
 					success:true,
 					data : {
-						message : "Offers added Successfully",
+						message : "Data added Successfully",
 						success : result
 
 					}

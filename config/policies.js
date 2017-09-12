@@ -42,6 +42,9 @@ module.exports.policies = {
   },
   CommonController:{
       '*': true
+  },
+  TrainorController:{
+      '*': true
   }
 
   /***************************************************************************

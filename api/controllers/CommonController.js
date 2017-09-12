@@ -8,7 +8,7 @@ var Promise = require('q');
 var gm = require('gm');
 module.exports = {
 
-	addOffers: function(req,res)
+	add: function(req,res)
 	{
 		var Model = {};
 		var data = {};
@@ -31,7 +31,7 @@ module.exports = {
 					code : 200,
 					success:true,
 					data : {
-						message : "Offers added Successfully",
+						message : "Data added Successfully",
 						success : result
 
 					}
@@ -40,7 +40,7 @@ module.exports = {
 
 		});
 	},
-	updateOffers : function(req,res)
+	update : function(req,res)
 	{
 		var  data = {};
 		data = req.body;
@@ -67,7 +67,7 @@ module.exports = {
 			}
 		})
 	},
-	listOffers : function(req,res)
+	list : function(req,res)
 	{
 		var Model = {};
 		var modelName = req.param('model');
@@ -93,7 +93,7 @@ module.exports = {
 			}
 		});
 	},
-	deleteOffers: function (req, res) {            
+	delete: function (req, res) {            
        	
        	var modelName = req.param('model');
         var Model = sails.models[modelName];

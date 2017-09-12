@@ -44,20 +44,18 @@ module.exports.routes = {
   'get /verify' : 'UserController.verify',
  
 
- //offers
-   'post /offers' : 'OffersController.addOffers',
-   'get /offers'  : 'OffersController.listOffers',
-   'put /offers'  : 'OffersController.updateOffers',
+
 
 //common
-   'post /addoffers'  : 'CommonController.addOffers',
-   'get /getoffer'    : 'CommonController.listOffers',
-   'put /updateoffer' : 'CommonController.updateOffers',
-   'delete /deleteoffers' : 'CommonController.deleteOffers',
+   'post /add'  : 'CommonController.add',
+   'get /get'    : 'CommonController.list',
+   'put /updat' : 'CommonController.update',
+   'delete /delete' : 'CommonController.delete',
    'post /upload': 'CommonController.uploadImages',
 
 // States API Routes
 'get /states' : 'StateController.findStates',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
