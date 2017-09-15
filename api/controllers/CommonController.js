@@ -13,10 +13,10 @@ module.exports = {
 		var Model = {};
 		var data = {};
 		data = req.body;
-		console.log("data",data);
+		//console.log("data",data);
 		var modelName = data.model;
         var Model = sails.models[modelName];
-        console.log("model",Model)
+        //console.log("model",Model)
 		Model.create(data).exec(function(err,result)
 		{	
 			if(err){
