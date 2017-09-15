@@ -32,7 +32,7 @@ module.exports = {
 
   		},
   		image: {
-        type: 'array'
+        type: 'string'
       }
   }
 };

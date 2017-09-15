@@ -25,7 +25,7 @@ module.exports = {
   			required:true
   		},
   		image: {
-        type: 'array'
+        type: 'string'
       },
       isDeleted:{
         type:'boolean',
