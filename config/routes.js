@@ -56,6 +56,9 @@ module.exports.routes = {
 // States API Routes
 'get /states' : 'StateController.findStates',
 
+//consult
+    'post /add'  : 'ConsultController.consult',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

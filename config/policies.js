@@ -45,6 +45,9 @@ module.exports.policies = {
   },
   TrainorController:{
       '*': true
+  },
+  ConsultController:{
+    '*':true
   }
 
   /***************************************************************************

@@ -29,12 +29,11 @@ module.exports = {
 			else{
 				return res.jsonx({
 					code : 200,
-					success:true,
-					data : {
-						message : "Data added Successfully",
-						success : result
+					success:true,					
+					message : "Data added Successfully",
+					data : result
 
-					}
+					
 				});
 			}
 
@@ -58,11 +57,10 @@ module.exports = {
 			{
 				return res.jsonx({
 					code : 200,
-					success:true,
-					data : {
-						message : "Successfully updated",
-						success : result
-					}
+					success:true,					
+					message : "Successfully updated",
+					data : result
+					
 				});
 			}
 		})
@@ -86,9 +84,7 @@ module.exports = {
 				return res.jsonx({
 					code : 200,
 					success:true,
-					data : {
-						success : result
-					}
+					data : result
 				});
 			}
 		});
