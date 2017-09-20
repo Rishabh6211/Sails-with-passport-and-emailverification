@@ -48,6 +48,9 @@ module.exports.policies = {
   },
   ConsultController:{
     '*':true
+  },
+  CartController:{
+    '*':true
   }
 
   /***************************************************************************

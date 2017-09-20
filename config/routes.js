@@ -58,6 +58,10 @@ module.exports.routes = {
 
 //consult
     'post /add'  : 'ConsultController.consult',
+//cart
+    'post /addcart' : 'CartController.cart',
+    'delete /cart' : 'CartController.delete',
+    'post /cartlist' : 'CartController.list',
 
   /***************************************************************************
   *                                                                          *
