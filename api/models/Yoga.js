@@ -8,7 +8,6 @@
 module.exports = {
 	autoCreatedAt: true,
     autoUpdatedAt: true,
-  attributes: {
   		attributes: {
   		name:{
   			type:'string',
@@ -36,6 +35,6 @@ module.exports = {
   			required:true
   		}
   }
-  }
+  
 };
 
