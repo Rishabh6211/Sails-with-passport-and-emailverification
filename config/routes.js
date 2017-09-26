@@ -59,6 +59,12 @@ module.exports.routes = {
 //consult
     'post /consult'  : 'ConsultController.consult',
 
+//cart
+    'post /addcart' : 'CartController.cart',
+    'delete /cart' : 'CartController.delete',
+    'post /cartlist' : 'CartController.list',
+
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
