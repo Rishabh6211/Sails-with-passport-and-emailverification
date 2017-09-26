@@ -63,7 +63,8 @@ module.exports.routes = {
     'post /addcart' : 'CartController.cart',
     'delete /cart' : 'CartController.delete',
     'post /cartlist' : 'CartController.list',
-
+//yoga
+    'post /yoga' : 'YogaController.yoga',
 
   /***************************************************************************
   *                                                                          *
