@@ -9,15 +9,17 @@ module.exports = {
 	
 	consult(req,res){
 		let data = req.body;
+		
 		Consult.create(data).exec(function(err,result){
+			
 			if(err)
 			{
-				if(err){
-				return res.jsonx({
+			    return res.jsonx({
 					code : 400,
 					success:false,
 					error : err
 				});
+				
 			}
 			else{
 				return res.jsonx({
@@ -29,7 +31,7 @@ module.exports = {
 					
 				});
 			}
-			}
+			
 		})
 	}
 };

@@ -57,7 +57,7 @@ module.exports.routes = {
 'get /states' : 'StateController.findStates',
 
 //consult
-    'post /add'  : 'ConsultController.consult',
+    'post /consult'  : 'ConsultController.consult',
 
   /***************************************************************************
   *                                                                          *
