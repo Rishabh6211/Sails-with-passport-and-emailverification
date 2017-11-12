@@ -13,6 +13,10 @@ module.exports = {
   			type:'string',
   			required:true
   		},
+      title:{
+      type:'string',
+      required:true
+     },
   		detail:{
   			type:'string',
   			required:true
@@ -30,9 +34,27 @@ module.exports = {
   			type:'string',
   			required:true
   		},
-      services:{
+      facebook:{
+      type:'string',
+       },
+       instaa:{
+        type:'string'
+       },
+       youtube:{
+        type:'string'
+       },
+       services:{
+        type : 'array'
+       },
+       phone:{
+        type: 'number'
+       },
+       email:{
+        type:'string'
+       },
+       mainservice:{
         type:'array'
-      }
+       }
   }
   
 };

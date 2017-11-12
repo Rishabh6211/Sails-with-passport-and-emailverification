@@ -65,11 +65,16 @@ module.exports.routes = {
     'post /cartlist' : 'CartController.list',
 //yoga
     'post /yoga' : 'YogaController.yoga',
-    'get /yogaProfile/:id' : 'YogaController.yogaProfile',
+    'get /yoga/:id' : 'YogaController.yogaProfile',
 //physio
     'post /physiotherapy' : 'PhysiotherapyController.physiotherapy',
 //gym
     'post /gym' : 'GymController.gym',
+
+//profiledetail
+    'post /profiledetail' :'ProfiledetailController.saveProfile',
+    'get /profile' : 'ProfiledetailController.findProfile',
+    'put/updateProfile' : 'ProfiledetailController.updateProfile',
 
   /***************************************************************************
   *                                                                          *

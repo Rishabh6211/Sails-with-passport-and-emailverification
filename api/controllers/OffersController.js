@@ -59,31 +59,7 @@ module.exports = {
 			}
 		});
 	},
-	updateOffers : function(req,res)
-	{
-		var  data = {};
-		data = req.body;
-		Offers.update({id:data.id},data).exec(function(err,result){
-			if(err){
-				return res.jsonx({
-					code : 400,
-					success:false,
-					error : err
-				});
-			}
-			else
-			{
-				return res.jsonx({
-					code : 200,
-					success:true,
-					data : {
-						message : "Successfully updated",
-						success : result
-					}
-				});
-			}
-		})
-	}
+	
 	
 };
 

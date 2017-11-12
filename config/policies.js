@@ -58,6 +58,9 @@ module.exports.policies = {
   PhysiotherapyController:{
     '*':true
   },
+  ProfiledetailController:{
+  '*':true
+  },
   GymController:{
     '*':true
   }
