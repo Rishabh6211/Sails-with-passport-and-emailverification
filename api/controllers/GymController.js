@@ -1,4 +1,18 @@
 /**
+ * GymController
+ *
+ * @description :: Server-side logic for managing gyms
+ * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
+ */
+
+/**
+ * PhysiotherapyController
+ *
+ * @description :: Server-side logic for managing physiotherapies
+ * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
+ */
+
+/**
  * YogaController
  *
  * @description :: Server-side logic for managing yogas
@@ -7,10 +21,10 @@
 
 module.exports = {
 
-		yoga(req,res){
+		gym(req,res){
 		let data = req.body;
 		
-		Yoga.create(data).exec(function(err,result){
+		Gym.create(data).exec(function(err,result){
 			
 			if(err)
 			{
@@ -33,30 +47,9 @@ module.exports = {
 			}
 			
 		})
-	},
-	yogaProfile : function(req,res)
-	{
-		
-		let id = req.param('id');
-		Yoga.find(id).exec(function(err,result){
-			if(!result)
-			{
-				return res.jsonx({
-					code : 200,
-					success:true,
-					message : "No details found"
-				});
-			}
-			else
-			{
-				return res.jsonx({
-					code : 200,
-					success:true,
-					data : result
-				});
-			}
-		});
 	}
 	
 };
+
+
 

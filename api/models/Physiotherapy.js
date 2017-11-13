@@ -1,15 +1,16 @@
 /**
- * Yoga.js
+ * Physiotherapy.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-	autoCreatedAt: true,
-    autoUpdatedAt: true,
-  		attributes: {
-  		name:{
+
+  attributes: {
+    autoCreatedAt: true,
+      autoUpdatedAt: true,
+  	name:{
   			type:'string',
   			required:true
   		},
@@ -23,17 +24,17 @@ module.exports = {
   		},
   		discount:{
   			type:'float',
-  			decimal:true,
+  			decimal:true
+  		},
+  		services:{
+  			type:'array',
   			required:true
   		},
-  		location:{
-  			type:'string',
-  			required:true
-  		},
-      services:{
-        type:'array'
+      location:{
+        type:'string',
+        required:true
       }
+
   }
-  
 };
 
