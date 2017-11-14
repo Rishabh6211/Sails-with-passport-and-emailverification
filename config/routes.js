@@ -66,6 +66,7 @@ module.exports.routes = {
 //yoga
     'post /yoga' : 'YogaController.yoga',
     'get /yoga/:id' : 'YogaController.yogaProfile',
+    'get /yogaProfile/:Id': 'YogaController.findProfile',
 //physio
     'post /physiotherapy' : 'PhysiotherapyController.physiotherapy',
 //gym

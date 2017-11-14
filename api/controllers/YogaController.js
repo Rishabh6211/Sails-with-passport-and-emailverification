@@ -58,7 +58,9 @@ module.exports = {
 		});
 	},
 	findProfile: function(req,res){
-		let yogaId = req.param('userId');
+		
+		let yogaId = req.param('Id');
+
 		Yoga.findOne(yogaId).exec(function(err,result){
 			if(err){
 				return res.jsonx({

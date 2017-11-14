@@ -34,15 +34,10 @@ module.exports = {
   			type:'string',
   			required:true
   		},
-      facebook:{
-      type:'string',
-       },
-       instaa:{
-        type:'string'
-       },
-       youtube:{
-        type:'string'
-       },
+      address:{
+        type:'string',
+        required:true
+      },
        services:{
         type : 'array'
        },
@@ -52,9 +47,6 @@ module.exports = {
        email:{
         type:'string'
        },
-       mainservice:{
-        type:'array'
-       }
   }
   
 };
