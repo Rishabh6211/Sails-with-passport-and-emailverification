@@ -77,6 +77,14 @@ module.exports.routes = {
     'get /profile' : 'ProfiledetailController.findProfile',
     'put/updateProfile' : 'ProfiledetailController.updateProfile',
 
+    'post /like' :'LikeController.profileLike',
+    'get /profileLike/:userId' :'LikeController.getProfileLike',
+    'get /count/:centerId' :'LikeController.countLike',
+
+    'get /view/:centerId' : 'ViewController.view',
+    'get /countview/:centerId' :'ViewController.countView',
+    'post /rating' :'RatingController.saveRating',
+    'get /likeProfile/:userId':'LikeController.getLikeProduct',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

@@ -42,11 +42,11 @@ module.exports = {
         type : 'array'
        },
        phone:{
-        type: 'number'
+        type: 'string'
        },
        email:{
         type:'string'
-       },
+       }
   }
   
 };

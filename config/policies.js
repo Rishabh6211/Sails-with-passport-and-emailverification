@@ -63,6 +63,15 @@ module.exports.policies = {
   },
   GymController:{
     '*':true
+  },
+  LikeController:{
+    '*':true
+  },
+  ViewController:{
+    '*':true
+  },
+  RatingController:{
+    '*':true
   }
 
 
