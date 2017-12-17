@@ -5,7 +5,6 @@ var jwt = require('jsonwebtoken');
 module.exports = {
     login: function (req, res) {
         passport.authenticate('local', function (err, user) {
-            console.log('user', user);
             if (!user) {
                 res.status(400).send({
                     success: false,
@@ -39,7 +38,6 @@ module.exports = {
                 //418 = I'm a teapot!
                 if (err) return res.status(401).send({success: false, message: 'invalid'});
                 if (decoded) {
-                    console.log(decoded[0]);
                     return res.send({success: true, user: decoded});
                 }
             });

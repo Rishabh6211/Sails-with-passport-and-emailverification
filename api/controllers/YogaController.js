@@ -36,7 +36,6 @@ module.exports = {
 	},
 	yogaProfile : function(req,res)
 	{
-		console.log("id");	
 		let yogaId = req.param('yogaId');
 		Yoga.find(yogaId).exec(function(err,result){
 			if(!result)

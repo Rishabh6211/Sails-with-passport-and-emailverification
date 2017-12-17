@@ -78,7 +78,7 @@ module.exports.routes = {
     'put/updateProfile' : 'ProfiledetailController.updateProfile',
 
     'post /like' :'LikeController.profileLike',
-    'get /profileLike/:userId' :'LikeController.getProfileLike',
+    'get /profileLike/:centerId/:userId' :'LikeController.getProfileLike',
     'get /count/:centerId' :'LikeController.countLike',
 
     'get /view/:centerId' : 'ViewController.view',

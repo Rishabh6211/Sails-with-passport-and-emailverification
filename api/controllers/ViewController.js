@@ -45,7 +45,6 @@ module.exports = {
 
 	countView: function(req,res){
 	let centerId = req.param('centerId');
-		console.log("in count view");
 		View.find({centerId:centerId, isView:true}).then(result=>{
 			console.log("result",result.length);
 			if(!result){
@@ -69,7 +68,6 @@ module.exports = {
 						count:result.length
 					});
 			}
-			console.log("count",count);
 		})
 	},
 	

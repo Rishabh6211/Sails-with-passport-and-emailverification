@@ -13,14 +13,13 @@ module.exports = {
 	console.log("json",json)
 	
 	if(json.userId || json.centerId){
-		console.log("in If")
 		Like.findOne(json)
 		.then(likeProduct=>{
 			console.log("lokepr",likeProduct)
 			if(likeProduct){
 				console.log("like")
 				if(likeProduct.isLiked == false){
-						Like.update({userId:json.userId},{isLiked:true})
+						Like.update({userId:json.userId, centerId:json.centerId},{isLiked:true})
 						.then(success=>{
 							return res.jsonx({
 								code : 200,
@@ -30,7 +29,7 @@ module.exports = {
 							});
 						})
 				}else{
-					Like.update({userId:json.userId},{isLiked:false})
+					Like.update({userId:json.userId, centerId:json.centerId},{isLiked:false})
 						.then(success=>{
 							console.log("json",success)
 							return res.jsonx({
@@ -72,9 +71,9 @@ module.exports = {
 },
 	getProfileLike : function(req,res){
 		console.log("here")
-		let userId =  req.param('userId');
-		console.log("userId",userId);
-		Like.findOne({userId:userId}).exec(function(err,result){
+		let centerId =  req.param('centerId');
+		
+		Like.findOne({centerId:centerId}).exec(function(err,result){
 			console.log("result",result)
 			if(!result){
 				return res.jsonx({
@@ -136,7 +135,7 @@ module.exports = {
 	getLikeProduct: function(req,res){
 		let userId = req.param('userId')
 		console.log('userId',userId);
-		Like.find({userId:userId}).populate('centerId').exec(function(err,result){
+		Like.find({userId:userId , isLiked:true}).populate('centerId').exec(function(err,result){
 			console.log("result",result);
 			if(err){
 				return res.jsonx({
