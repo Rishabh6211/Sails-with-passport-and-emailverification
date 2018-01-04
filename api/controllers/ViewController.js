@@ -30,10 +30,18 @@ module.exports = {
 			else {
 				View.create(data).exec(function(err,result){
 					if(err){
-						console.log("err",err)
+						return res.jsonx({
+							code : 400,
+							success:false,
+							message:err
+						});
 					}
 					else{
-						console.log("result",result);
+						return res.jsonx({
+							code : 200,
+							success:true,
+							message:result
+						});
 					}
 				})
 			}
@@ -46,7 +54,6 @@ module.exports = {
 	countView: function(req,res){
 	let centerId = req.param('centerId');
 		View.find({centerId:centerId, isView:true}).then(result=>{
-			console.log("result",result.length);
 			if(!result){
 				return res.jsonx({
 						code : 404,

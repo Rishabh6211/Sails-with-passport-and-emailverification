@@ -9,10 +9,8 @@ module.exports = {
 	  
 	  findStates : function(req,res)
 	  {
-	  	console.log("in State");
 	  	States.find({}).exec(function(err,states)
 	  	{
-	  		console.log("states",states);
 	  		if(err)
 	  		{
 	  			return res.status(400).jsonx({

@@ -10,14 +10,11 @@ module.exports = {
 	let json = {}
 	 json.userId = req.body.userId;
 	 json.centerId = req.body.centerId;
-	console.log("json",json)
 	
 	if(json.userId || json.centerId){
 		Like.findOne(json)
 		.then(likeProduct=>{
-			console.log("lokepr",likeProduct)
 			if(likeProduct){
-				console.log("like")
 				if(likeProduct.isLiked == false){
 						Like.update({userId:json.userId, centerId:json.centerId},{isLiked:true})
 						.then(success=>{
@@ -31,7 +28,6 @@ module.exports = {
 				}else{
 					Like.update({userId:json.userId, centerId:json.centerId},{isLiked:false})
 						.then(success=>{
-							console.log("json",success)
 							return res.jsonx({
 								code : 200,
 								success:true,
@@ -45,7 +41,6 @@ module.exports = {
 			else{
 				 Like.create(json)
 				 .then(success=>{
-				 	console.log("succeess*****",success)
 					return res.jsonx({
 								code : 200,
 								success:true,
@@ -59,22 +54,18 @@ module.exports = {
 		}) // end then 
 		.catch(err=>{
 			message = "error"
-    		console.log("error")
 		})
 
 	}// end if
 	else{
 					message = "product id or user id is missing"
-		    		console.log("message",message);
 		}
 
 },
 	getProfileLike : function(req,res){
-		console.log("here")
 		let centerId =  req.param('centerId');
-		
-		Like.findOne({centerId:centerId}).exec(function(err,result){
-			console.log("result",result)
+		let userId   =  req.param('userId')
+		Like.findOne({centerId:centerId, userId:userId}).exec(function(err,result){
 			if(!result){
 				return res.jsonx({
 						code : 404,
@@ -105,9 +96,8 @@ module.exports = {
 	},
 	countLike: function(req,res){
 	let centerId = req.param('centerId');
-		console.log("in count like");
 		Like.find({centerId:centerId, isLiked:true}).then(result=>{
-			console.log("result",result.length);
+		
 			if(!result){
 				return res.jsonx({
 						code : 404,
@@ -129,14 +119,13 @@ module.exports = {
 						count:result.length
 					});
 			}
-			console.log("count",count);
+			
 		})
 	},
 	getLikeProduct: function(req,res){
 		let userId = req.param('userId')
-		console.log('userId',userId);
 		Like.find({userId:userId , isLiked:true}).populate('centerId').exec(function(err,result){
-			console.log("result",result);
+			
 			if(err){
 				return res.jsonx({
 					code : 400,
